@@ -1,5 +1,5 @@
 from gemini_api import get_ai_response
-
+print("=== AI CHATBOT ===")
 while True:
     user_input = input("you: ").lower().strip()
     if user_input.lower() == "exit":

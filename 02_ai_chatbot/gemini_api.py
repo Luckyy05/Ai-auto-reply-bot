@@ -10,11 +10,7 @@ if not api_key:
     raise ValueError("GEMINI_API_KEY not found in .env")
 
 client = genai.Client(api_key=api_key)
-
+chat = client.chats.create( model="gemini-3.8-flash")
 def get_ai_response(prompt):
-    response = client.models.generate_content(
-        model="gemini-3.8-flash",
-        contents=prompt
-    )
-
+    response = chat.send_message(prompt)
     return response.text
