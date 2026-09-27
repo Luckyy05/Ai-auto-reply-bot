@@ -1,25 +1,25 @@
 print("=== My Python Chatbot ===")
 
 while True:
-    user_input = input("You: ")
+    user_input = input("You: ").lower().strip()
 
-    if user_input.lower() == "exit":
+    if user_input == "exit":
         print("Bot: Goodbye!")
         break
 
-    elif user_input.lower() == "hi":
+    elif user_input == "hi":
         print("Bot: Hello sir!")
 
-    elif user_input.lower() == "hello":
+    elif user_input == "hello":
         print("Bot: Hello sir!")
 
-    elif user_input.lower() == "how are you":
+    elif user_input == "how are you":
         print("Bot: I'm doing great! How can I help you?")
 
-    elif user_input.lower() == "who are you":
+    elif user_input == "who are you":
         print("Bot: I'm your Python bot.")
 
-    elif user_input.lower() == "what is python":
+    elif user_input == "what is python":
         print("Bot: Python is a fundamental programming language.")
 
     else:
