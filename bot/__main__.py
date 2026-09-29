@@ -1,5 +1,5 @@
-from .gemini_api import get_ai_response
-from .reply_logic import should_reply
+from gemini_api import get_ai_response
+from reply_logic import should_reply
 
 
 def main():

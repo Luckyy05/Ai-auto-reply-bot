@@ -1,5 +1,5 @@
-from ai_chatbot.gemini_api import get_ai_response
-from ai_chatbot.reply_logic import should_reply
+from bot.gemini_api import get_ai_response
+from bot.reply_logic import should_reply
 
 def main():
     print("=== AI CHATBOT ===")

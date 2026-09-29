@@ -1,0 +1,7 @@
+# WhatsApp Desktop coordinates
+
+SEARCH_BOX = (172, 152)
+CHAT_AREA = (215, 284)
+CHAT_START = (528,143)
+CHAT_END = (1871,1099)
+MESSAGE_INPUT = (628, 115)
