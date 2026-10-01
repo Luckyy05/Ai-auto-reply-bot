@@ -1,7 +1,6 @@
 import time
 import pyautogui
 import pyperclip
-import pygetwindow as gw
 
 from bot.config import (
     SEARCH_BOX,
