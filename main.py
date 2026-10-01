@@ -1,25 +1,32 @@
 from bot.gemini_api import get_ai_response
 from bot.reply_logic import should_reply
+from bot.whatsapp import activate_whatsapp, send_message , click_search_box, search_chat
+
 
 def main():
-    print("=== AI CHATBOT ===")
+    print("=== AI AUTO-REPLY BOT ===")
 
-    my_name = "Lucky".strip().lower()
-    while True:
+    # Temporary manual input
+    sender = input("Sender: ")
+    message = input("Message: ")
 
-        sender = input("Sender:")
-        message = input("message:")
+    # Activate WhatsApp Desktop
+    activate_whatsapp()
+    search_chat("Lucky")
 
-        if message.lower().strip() == "exit":
-            print("bot: Goodbye!")
-            break 
+    # Check whether bot should reply
+    if not should_reply(sender, message, "Lucky"):
+        print("Bot: Message ignored.")
+        return
 
-        if should_reply(sender, message,my_name):
-            response = get_ai_response(message)
-            print("bot:",response)
+    # Generate AI response
+    response = get_ai_response(message)
 
-        else :
-            print("bot: message is ignored")
+    print("Bot:", response)
+
+    # Send AI response to WhatsApp
+    send_message(response)
+
 
 if __name__ == "__main__":
     main()

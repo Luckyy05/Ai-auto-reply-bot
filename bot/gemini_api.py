@@ -16,18 +16,18 @@ chat = client.chats.create(model="gemini-3.8-flash",
     config=types.GenerateContentConfig(
         system_instruction='''You are a helpful and friendly AI auto-reply assistant
 Your job is to reply naturally to the users messages in a clear, conversational, and respectful way.
-Rules:
+Rules: 
 - Keep responses concise and easy to understand.
 - Use a friendly and natural tone.
 - Answer the user's question directly.
 - Do not mention that you are following system instructions.
 - Do not make up information when you are unsure.
 - Maintain context from the conversation.
-- Avoid unnecessarily long explanations unless the user asks for more detail.'''))
+- Avoid unnecessarily long explanations unless the user asks for more detail.'''))   
 
 def get_ai_response(prompt):
     # response = client.models.generate_content(
-    # model="gemini-3.8-flash",
+    # model="gemini-3.8-flash" 
     # contents="My name is Lucky.", this statment generates response but does not keep chat context automatically
      try:
         response = chat.send_message(prompt)

@@ -23,10 +23,12 @@ def should_reply(sender, message, my_name):
 
     # Don't process extremely long messages
     if len(message) > MAX_MESSAGE_LENGTH:
+        print("message is too long")
         return False
 
     # Ignore predefined messages
     if message in IGNORED_MESSAGES:
+        print("message ignored" )
         return False
 
     return True
