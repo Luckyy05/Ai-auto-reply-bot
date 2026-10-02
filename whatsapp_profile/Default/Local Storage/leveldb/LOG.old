@@ -1,3 +1,6 @@
-2026/10/02-22:14:59.415 20d8 Reusing MANIFEST C:\python\ai-auto-reply-bot\whatsapp_profile\Default\Local Storage\leveldb/MANIFEST-000001
-2026/10/02-22:14:59.418 20d8 Recovering log #14
-2026/10/02-22:14:59.421 20d8 Reusing old log C:\python\ai-auto-reply-bot\whatsapp_profile\Default\Local Storage\leveldb/000014.log 
+2026/10/02-23:24:35.892 6f28 Reusing MANIFEST C:\python\ai-auto-reply-bot\whatsapp_profile\Default\Local Storage\leveldb/MANIFEST-000001
+2026/10/02-23:24:35.893 6f28 Recovering log #19
+2026/10/02-23:24:35.897 6f28 Reusing old log C:\python\ai-auto-reply-bot\whatsapp_profile\Default\Local Storage\leveldb/000019.log 
+2026/10/02-23:24:54.026 5ec4 Level-0 table #24: started
+2026/10/02-23:24:54.034 5ec4 Level-0 table #24: 14725 bytes OK
+2026/10/02-23:24:54.036 5ec4 Delete type=0 #19

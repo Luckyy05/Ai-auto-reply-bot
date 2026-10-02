@@ -1,5 +1,4 @@
 import re
-
 from playwright.sync_api import sync_playwright
 
 
@@ -36,6 +35,7 @@ class WhatsApp:
         print("WhatsApp Web loaded.")
 
     def get_messages(self):
+
         messages = self.page.locator(
             "[data-pre-plain-text]"
         )
@@ -68,7 +68,6 @@ class WhatsApp:
                 })
 
             except Exception as e:
-
                 print(
                     f"Could not read message {i}: {e}"
                 )
@@ -82,7 +81,6 @@ class WhatsApp:
         if not messages:
             return None
 
-        # Work backwards so empty/media messages are skipped
         for message in reversed(messages):
 
             text = message["text"].strip()
@@ -95,7 +93,7 @@ class WhatsApp:
             # Example:
             # [21:23, 01/10/2026] Dishika:
             match = re.search(
-                r"\]\s*(.*?):\s*$",
+                r"\]\s([^:]+):\s*$",
                 metadata
             )
 
@@ -111,6 +109,18 @@ class WhatsApp:
             }
 
         return None
+
+    def send_message(self, message):
+
+        message_box = self.page.locator(
+            'div[contenteditable="true"][data-tab="10"]'
+        )
+
+        message_box.click()
+
+        message_box.fill(message)
+
+        self.page.keyboard.press("Enter")
 
     def close(self):
 
@@ -137,14 +147,13 @@ if __name__ == "__main__":
     print("\n--- LATEST MESSAGE ---")
 
     if latest:
-
         print("Sender:", latest["sender"])
         print("Message:", latest["text"])
         print("Metadata:", latest["metadata"])
-
     else:
-
         print("No text message found.")
+
+    whatsapp.send_message("Hi")
 
     input("\nPress ENTER to close...")
 

@@ -1,87 +1,11 @@
-2026/10/02-22:15:00.095 3ea4 Reusing MANIFEST C:\python\ai-auto-reply-bot\whatsapp_profile\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/10/02-22:15:00.097 3ea4 Recovering log #1292
-2026/10/02-22:15:00.173 3ea4 Reusing old log C:\python\ai-auto-reply-bot\whatsapp_profile\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/001292.log 
-2026/10/02-22:15:01.322 3ea4 Compacting 1@1 + 4@2 files
-2026/10/02-22:15:01.400 3ea4 Generated table #1305@1: 90965 keys, 2240925 bytes
-2026/10/02-22:15:01.477 3ea4 Generated table #1306@1: 64025 keys, 2254602 bytes
-2026/10/02-22:15:01.599 3ea4 Generated table #1307@1: 54210 keys, 2219697 bytes
-2026/10/02-22:15:01.611 3ea4 Generated table #1308@1: 9875 keys, 147038 bytes
-2026/10/02-22:15:01.612 3ea4 Compacted 1@1 + 4@2 files => 6862262 bytes
-2026/10/02-22:15:01.613 3ea4 compacted to: files[ 0 0 28 0 0 0 0 ]
-2026/10/02-22:15:08.835 3ea4 Level-0 table #1310: started
-2026/10/02-22:15:08.894 3ea4 Level-0 table #1310: 1211345 bytes OK
-2026/10/02-22:15:08.896 3ea4 Delete type=2 #1288
-2026/10/02-22:15:08.896 3ea4 Delete type=2 #1289
-2026/10/02-22:15:08.896 3ea4 Delete type=2 #1290
-2026/10/02-22:15:08.896 3ea4 Delete type=2 #1291
-2026/10/02-22:15:08.896 3ea4 Delete type=0 #1292
-2026/10/02-22:15:08.896 3ea4 Delete type=2 #1294
-2026/10/02-22:15:08.904 59c4 Compacting 1@0 + 0@1 files
-2026/10/02-22:15:08.989 59c4 Generated table #1311@0: 24242 keys, 396140 bytes
-2026/10/02-22:15:09.012 59c4 Generated table #1312@0: 10849 keys, 348977 bytes
-2026/10/02-22:15:09.012 59c4 Compacted 1@0 + 0@1 files => 745117 bytes
-2026/10/02-22:15:09.013 59c4 compacted to: files[ 0 2 28 0 0 0 0 ]
-2026/10/02-22:15:09.227 3ea4 Compacting 1@1 + 8@2 files
-2026/10/02-22:15:09.390 3ea4 Generated table #1313@1: 23932 keys, 2224863 bytes
-2026/10/02-22:15:09.458 3ea4 Generated table #1314@1: 6125 keys, 2126359 bytes
-2026/10/02-22:15:09.540 3ea4 Generated table #1315@1: 11409 keys, 2133786 bytes
-2026/10/02-22:15:09.709 3ea4 Generated table #1316@1: 79880 keys, 2222372 bytes
-2026/10/02-22:15:09.888 3ea4 Generated table #1317@1: 101174 keys, 2250490 bytes
-2026/10/02-22:15:10.060 3ea4 Generated table #1318@1: 101046 keys, 2252169 bytes
-2026/10/02-22:15:10.270 3ea4 Generated table #1319@1: 100510 keys, 2251749 bytes
-2026/10/02-22:15:10.419 3ea4 Generated table #1320@1: 68964 keys, 1808232 bytes
-2026/10/02-22:15:10.419 3ea4 Compacted 1@1 + 8@2 files => 17270020 bytes
-2026/10/02-22:15:10.420 3ea4 compacted to: files[ 0 1 28 0 0 0 0 ]
-2026/10/02-22:15:10.423 3ea4 Delete type=2 #1310
-2026/10/02-22:15:10.452 1bac Compacting 1@1 + 3@2 files
-2026/10/02-22:15:10.675 1bac Generated table #1321@1: 87808 keys, 2238364 bytes
-2026/10/02-22:15:10.847 1bac Generated table #1322@1: 68770 keys, 2261071 bytes
-2026/10/02-22:15:11.017 1bac Generated table #1323@1: 52397 keys, 2218224 bytes
-2026/10/02-22:15:11.032 1bac Generated table #1324@1: 3783 keys, 147339 bytes
-2026/10/02-22:15:11.032 1bac Compacted 1@1 + 3@2 files => 6864998 bytes
-2026/10/02-22:15:11.034 1bac compacted to: files[ 0 0 29 0 0 0 0 ]
-2026/10/02-22:15:11.035 1bac Delete type=2 #1296
-2026/10/02-22:15:11.035 1bac Delete type=2 #1297
-2026/10/02-22:15:11.035 1bac Delete type=2 #1298
-2026/10/02-22:15:11.035 1bac Delete type=2 #1299
-2026/10/02-22:15:11.035 1bac Delete type=2 #1300
-2026/10/02-22:15:11.035 1bac Delete type=2 #1301
-2026/10/02-22:15:11.035 1bac Delete type=2 #1302
-2026/10/02-22:15:11.035 1bac Delete type=2 #1303
-2026/10/02-22:15:11.035 1bac Delete type=2 #1305
-2026/10/02-22:15:11.035 1bac Delete type=2 #1306
-2026/10/02-22:15:11.035 1bac Delete type=2 #1307
-2026/10/02-22:15:11.035 1bac Delete type=2 #1311
-2026/10/02-22:15:11.036 1bac Delete type=2 #1312
-2026/10/02-22:15:34.996 1bac Level-0 table #1326: started
-2026/10/02-22:15:35.035 1bac Level-0 table #1326: 1145037 bytes OK
-2026/10/02-22:15:35.037 1bac Delete type=0 #1309
-2026/10/02-22:15:35.999 59c4 Compacting 1@0 + 0@1 files
-2026/10/02-22:15:36.042 59c4 Generated table #1327@0: 19849 keys, 205473 bytes
-2026/10/02-22:15:36.072 59c4 Generated table #1328@0: 13585 keys, 456664 bytes
-2026/10/02-22:15:36.072 59c4 Compacted 1@0 + 0@1 files => 662137 bytes
-2026/10/02-22:15:36.073 59c4 compacted to: files[ 0 2 29 0 0 0 0 ]
-2026/10/02-22:15:36.074 59c4 Delete type=2 #1326
-2026/10/02-22:15:37.072 3ea4 Compacting 1@1 + 8@2 files
-2026/10/02-22:15:37.180 3ea4 Generated table #1329@1: 23906 keys, 2223753 bytes
-2026/10/02-22:15:37.220 3ea4 Generated table #1330@1: 6155 keys, 2129526 bytes
-2026/10/02-22:15:37.281 3ea4 Generated table #1331@1: 11409 keys, 2133786 bytes
-2026/10/02-22:15:37.413 3ea4 Generated table #1332@1: 75973 keys, 2218655 bytes
-2026/10/02-22:15:37.577 3ea4 Generated table #1333@1: 101179 keys, 2250234 bytes
-2026/10/02-22:15:37.739 3ea4 Generated table #1334@1: 100942 keys, 2249728 bytes
-2026/10/02-22:15:37.862 3ea4 Generated table #1335@1: 100527 keys, 2252192 bytes
-2026/10/02-22:15:37.974 3ea4 Generated table #1336@1: 84934 keys, 2161612 bytes
-2026/10/02-22:15:37.974 3ea4 Compacted 1@1 + 8@2 files => 17619486 bytes
-2026/10/02-22:15:37.975 3ea4 compacted to: files[ 0 1 29 0 0 0 0 ]
-2026/10/02-22:15:37.977 3ea4 Delete type=2 #1313
-2026/10/02-22:15:37.977 3ea4 Delete type=2 #1314
-2026/10/02-22:15:37.977 3ea4 Delete type=2 #1315
-2026/10/02-22:15:37.977 3ea4 Delete type=2 #1316
-2026/10/02-22:15:37.977 3ea4 Delete type=2 #1317
-2026/10/02-22:15:37.977 3ea4 Delete type=2 #1318
-2026/10/02-22:15:37.977 3ea4 Delete type=2 #1319
-2026/10/02-22:15:37.977 3ea4 Delete type=2 #1320
-2026/10/02-22:15:37.977 3ea4 Delete type=2 #1328
-2026/10/02-22:16:06.132 59c4 Level-0 table #1338: started
-2026/10/02-22:16:06.180 59c4 Level-0 table #1338: 1048496 bytes OK
-2026/10/02-22:16:06.181 59c4 Delete type=0 #1325
+2026/10/02-23:24:36.536 58fc Reusing MANIFEST C:\python\ai-auto-reply-bot\whatsapp_profile\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/10/02-23:24:36.538 58fc Recovering log #1731
+2026/10/02-23:24:36.547 58fc Reusing old log C:\python\ai-auto-reply-bot\whatsapp_profile\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/001731.log 
+2026/10/02-23:24:45.951 4048 Compacting 1@1 + 2@2 files
+2026/10/02-23:24:46.032 4048 Generated table #1759@1: 99495 keys, 2249304 bytes
+2026/10/02-23:24:46.086 4048 Generated table #1760@1: 66240 keys, 1775625 bytes
+2026/10/02-23:24:46.086 4048 Compacted 1@1 + 2@2 files => 4024929 bytes
+2026/10/02-23:24:46.087 4048 compacted to: files[ 0 0 31 0 0 0 0 ]
+2026/10/02-23:24:46.088 4048 Delete type=2 #1728
+2026/10/02-23:24:46.088 4048 Delete type=2 #1729
+2026/10/02-23:24:46.088 4048 Delete type=2 #1735
