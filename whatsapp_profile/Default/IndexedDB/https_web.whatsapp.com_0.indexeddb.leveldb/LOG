@@ -1,0 +1,63 @@
+2026/10/02-22:17:54.056 55f8 Reusing MANIFEST C:\python\ai-auto-reply-bot\whatsapp_profile\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/10/02-22:17:54.058 55f8 Recovering log #1337
+2026/10/02-22:17:54.059 55f8 Reusing old log C:\python\ai-auto-reply-bot\whatsapp_profile\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/001337.log 
+2026/10/02-22:17:54.732 5aa0 Compacting 1@0 + 1@1 files
+2026/10/02-22:17:54.779 5aa0 Generated table #1340@0: 42625 keys, 394692 bytes
+2026/10/02-22:17:54.796 5aa0 Generated table #1341@0: 15792 keys, 443801 bytes
+2026/10/02-22:17:54.796 5aa0 Compacted 1@0 + 1@1 files => 838493 bytes
+2026/10/02-22:17:54.797 5aa0 compacted to: files[ 0 2 29 0 0 0 0 ]
+2026/10/02-22:17:54.797 5aa0 Delete type=2 #1327
+2026/10/02-22:17:54.798 5aa0 Delete type=2 #1338
+2026/10/02-22:17:55.595 49d4 Compacting 1@1 + 5@2 files
+2026/10/02-22:17:55.679 49d4 Generated table #1342@1: 90067 keys, 2239970 bytes
+2026/10/02-22:17:55.757 49d4 Generated table #1343@1: 67040 keys, 2261930 bytes
+2026/10/02-22:17:55.833 49d4 Generated table #1344@1: 52294 keys, 2216890 bytes
+2026/10/02-22:17:55.846 49d4 Generated table #1345@1: 10840 keys, 214025 bytes
+2026/10/02-22:17:55.846 49d4 Compacted 1@1 + 5@2 files => 6932815 bytes
+2026/10/02-22:17:55.846 49d4 compacted to: files[ 0 1 28 0 0 0 0 ]
+2026/10/02-22:17:55.847 49d4 Delete type=2 #1308
+2026/10/02-22:17:55.847 49d4 Delete type=2 #1321
+2026/10/02-22:17:55.847 49d4 Delete type=2 #1322
+2026/10/02-22:17:55.847 49d4 Delete type=2 #1323
+2026/10/02-22:17:55.847 49d4 Delete type=2 #1324
+2026/10/02-22:17:55.847 49d4 Delete type=2 #1340
+2026/10/02-22:18:02.980 49d4 Compacting 1@1 + 7@2 files
+2026/10/02-22:18:03.021 49d4 Generated table #1346@1: 6155 keys, 2129529 bytes
+2026/10/02-22:18:03.057 49d4 Generated table #1347@1: 11409 keys, 2133786 bytes
+2026/10/02-22:18:03.110 49d4 Generated table #1348@1: 70556 keys, 2212043 bytes
+2026/10/02-22:18:03.193 49d4 Generated table #1349@1: 101351 keys, 2252096 bytes
+2026/10/02-22:18:03.265 49d4 Generated table #1350@1: 100770 keys, 2251318 bytes
+2026/10/02-22:18:03.360 49d4 Generated table #1351@1: 100392 keys, 2249660 bytes
+2026/10/02-22:18:03.573 49d4 Generated table #1352@1: 99292 keys, 2249963 bytes
+2026/10/02-22:18:03.600 49d4 Generated table #1353@1: 6984 keys, 394585 bytes
+2026/10/02-22:18:03.600 49d4 Compacted 1@1 + 7@2 files => 15872980 bytes
+2026/10/02-22:18:03.601 49d4 compacted to: files[ 0 0 29 0 0 0 0 ]
+2026/10/02-22:18:03.602 49d4 Delete type=2 #1330
+2026/10/02-22:18:03.602 49d4 Delete type=2 #1331
+2026/10/02-22:18:03.602 49d4 Delete type=2 #1332
+2026/10/02-22:18:03.602 49d4 Delete type=2 #1333
+2026/10/02-22:18:03.602 49d4 Delete type=2 #1334
+2026/10/02-22:18:03.602 49d4 Delete type=2 #1335
+2026/10/02-22:18:03.602 49d4 Delete type=2 #1336
+2026/10/02-22:18:03.603 49d4 Delete type=2 #1341
+2026/10/02-22:18:05.250 49d4 Level-0 table #1355: started
+2026/10/02-22:18:05.304 49d4 Level-0 table #1355: 1150973 bytes OK
+2026/10/02-22:18:05.307 49d4 Delete type=0 #1337
+2026/10/02-22:18:06.208 5aa0 Compacting 1@0 + 0@1 files
+2026/10/02-22:18:06.259 5aa0 Generated table #1356@0: 21277 keys, 343646 bytes
+2026/10/02-22:18:06.278 5aa0 Generated table #1357@0: 5525 keys, 257053 bytes
+2026/10/02-22:18:06.278 5aa0 Compacted 1@0 + 0@1 files => 600699 bytes
+2026/10/02-22:18:06.278 5aa0 compacted to: files[ 0 2 29 0 0 0 0 ]
+2026/10/02-22:18:06.279 5aa0 Delete type=2 #1355
+2026/10/02-22:18:07.282 5aa0 Compacting 1@1 + 9@2 files
+2026/10/02-22:18:07.396 5aa0 Generated table #1358@1: 23906 keys, 2223833 bytes
+2026/10/02-22:18:07.446 5aa0 Generated table #1359@1: 6158 keys, 2129570 bytes
+2026/10/02-22:18:07.529 5aa0 Generated table #1360@1: 11409 keys, 2133786 bytes
+2026/10/02-22:18:07.645 5aa0 Generated table #1361@1: 69396 keys, 2208552 bytes
+2026/10/02-22:18:07.819 5aa0 Generated table #1362@1: 101478 keys, 2252097 bytes
+2026/10/02-22:18:07.988 5aa0 Generated table #1363@1: 100702 keys, 2251089 bytes
+2026/10/02-22:18:08.136 5aa0 Generated table #1364@1: 100518 keys, 2249681 bytes
+2026/10/02-22:18:08.282 5aa0 Generated table #1365@1: 100402 keys, 2250023 bytes
+2026/10/02-22:18:08.309 5aa0 Generated table #1366@1: 9803 keys, 482853 bytes
+2026/10/02-22:18:08.309 5aa0 Compacted 1@1 + 9@2 files => 18181484 bytes
+2026/10/02-22:18:08.310 5aa0 compacted to: files[ 0 1 29 0 0 0 0 ]

@@ -1,95 +1,151 @@
-import time
-import pyautogui
-import pyperclip
+import re
 
-from bot.config import (
-    SEARCH_BOX,
-    CHAT_AREA,
-    MESSAGE_INPUT,
-    CHAT_START,
-    CHAT_END
-)
+from playwright.sync_api import sync_playwright
 
 
-def activate_whatsapp():
-    windows = [
-        window
-        for window in gw.getAllWindows()
-        if "WhatsApp" in window.title
-        and not window.isMinimized
-        and window.width > 500
-        and window.height > 500
-    ]
+class WhatsApp:
 
-    if not windows:
-        raise RuntimeError("WhatsApp Desktop window not found.")
+    def __init__(self):
+        self.playwright = None
+        self.browser = None
+        self.page = None
 
-    # Use the largest visible WhatsApp window
-    whatsapp_window = max(
-        windows,
-        key=lambda window: window.width * window.height
-    )
+    def start(self):
+        self.playwright = sync_playwright().start()
 
-    whatsapp_window.activate()
+        self.browser = self.playwright.chromium.launch_persistent_context(
+            user_data_dir="./whatsapp_profile",
+            headless=False
+        )
 
-    time.sleep(2)
+        self.page = (
+            self.browser.pages[0]
+            if self.browser.pages
+            else self.browser.new_page()
+        )
 
-    print("WhatsApp activated.")
+        self.page.goto("https://web.whatsapp.com")
 
+        print("Waiting for WhatsApp Web...")
 
-def read_chat():
-    # Keep this for now, but we are NOT relying on it yet
-    pyautogui.moveTo(*CHAT_START)
-    pyautogui.dragTo(*CHAT_END, duration=1, button="left")
+        self.page.wait_for_selector(
+            "#pane-side",
+            timeout=60000
+        )
 
-    pyautogui.hotkey("ctrl", "c")
-    time.sleep(1)
+        print("WhatsApp Web loaded.")
 
-    return pyperclip.paste()
+    def get_messages(self):
+        messages = self.page.locator(
+            "[data-pre-plain-text]"
+        )
 
+        results = []
 
-def click_search_box():
-    pyautogui.click(*SEARCH_BOX)
+        for i in range(messages.count()):
 
+            message = messages.nth(i)
 
-def click_message_input():
-    pyautogui.click(*MESSAGE_INPUT)
+            try:
+                metadata = message.get_attribute(
+                    "data-pre-plain-text"
+                )
 
+                text_locator = message.locator(
+                    '[data-testid="selectable-text"]'
+                )
 
-def search_chat(name):
-    click_search_box()
+                if text_locator.count() > 0:
+                    text = text_locator.first.inner_text().strip()
+                else:
+                    text = ""
 
-    time.sleep(0.5)
+                results.append({
+                    "metadata": metadata.strip()
+                    if metadata
+                    else "",
+                    "text": text
+                })
 
-    pyautogui.hotkey("ctrl", "a")
-    pyautogui.write(name, interval=0.05)
+            except Exception as e:
 
-    time.sleep(1)
+                print(
+                    f"Could not read message {i}: {e}"
+                )
 
-    pyautogui.press("enter")
+        return results
 
-    time.sleep(1)
-def send_message(message):
-    click_message_input()
+    def get_latest_message(self):
 
-    time.sleep(0.3)
+        messages = self.get_messages()
 
-    # Copy the complete message to the clipboard
-    pyperclip.copy(message)
+        if not messages:
+            return None
 
-    # Paste the message into WhatsApp
-    pyautogui.hotkey("ctrl", "v")
+        # Work backwards so empty/media messages are skipped
+        for message in reversed(messages):
 
-    time.sleep(0.3)
+            text = message["text"].strip()
 
-    # Send
-    pyautogui.press("enter")
+            if not text:
+                continue
 
-    time.sleep(0.5)
+            metadata = message["metadata"].strip()
 
-    print("Message sent.")
+            # Example:
+            # [21:23, 01/10/2026] Dishika:
+            match = re.search(
+                r"\]\s*(.*?):\s*$",
+                metadata
+            )
+
+            if match:
+                sender = match.group(1).strip()
+            else:
+                sender = ""
+
+            return {
+                "sender": sender,
+                "text": text,
+                "metadata": metadata
+            }
+
+        return None
+
+    def close(self):
+
+        if self.browser:
+            self.browser.close()
+
+        if self.playwright:
+            self.playwright.stop()
+
 
 if __name__ == "__main__":
-    activate_whatsapp()
 
-    send_message("what is python?")
+    whatsapp = WhatsApp()
+
+    whatsapp.start()
+
+    input(
+        "Open the chat you want to monitor, "
+        "then press ENTER..."
+    )
+
+    latest = whatsapp.get_latest_message()
+
+    print("\n--- LATEST MESSAGE ---")
+
+    if latest:
+
+        print("Sender:", latest["sender"])
+        print("Message:", latest["text"])
+        print("Metadata:", latest["metadata"])
+
+    else:
+
+        print("No text message found.")
+
+    input("\nPress ENTER to close...")
+
+    whatsapp.close()
