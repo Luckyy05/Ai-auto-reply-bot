@@ -1,1 +1,1 @@
-# ai_chatbot package
+# bot package

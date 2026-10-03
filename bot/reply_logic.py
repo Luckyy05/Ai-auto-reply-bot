@@ -8,11 +8,11 @@ IGNORED_MESSAGES = [
 ]
 
 
-def should_reply(sender, message, my_name):
+def should_reply(sender, message, my_name): 
     sender = sender.strip().lower()
-    message = message.strip().lower()
+    message = message.strip().lower() 
     my_name = my_name.strip().lower()
-
+    
     # Don't reply to my own messages
     if sender == my_name:
         return False
