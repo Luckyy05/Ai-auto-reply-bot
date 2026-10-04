@@ -23,34 +23,51 @@ def main():
         # Get latest message
         latest = whatsapp.get_latest_message()
 
+
         if not latest:
             print("No message found.")
             return
 
-        sender = latest["sender"]
-        message = latest["text"]
+        print("\n--- INITIAL MESSAGE ---")
+        print("Sender:", latest["sender"])
+        print("Message:", latest["text"])
 
-        print("\n--- MESSAGE ---")
-        print("Sender:", sender)  
-        print("Message:", message)
+        last_message = latest
 
-        # Check whether bot should reply
-        if not should_reply(sender, message, "Lucky"):
+        while True:
 
-            print("Bot: Message ignored.")
-            return
+            print("\nWaiting for a new message...")
 
-        # Generate AI response
-        response = get_ai_response(message)
+            new_message = whatsapp.wait_for_new_message(last_message)
 
-        print("Bot:", response)
+            print("\n--- NEW MESSAGE ---")
+            print("Sender:", new_message["sender"])
+            print("Message:", new_message["text"])
+            print("Metadata:", new_message["metadata"])
 
-        # Send response to WhatsApp
-        whatsapp.send_message(response)
+            # Update last seen message
+            last_message = new_message
 
-        print("Message sent successfully.")
+            # Check whether bot should reply
+            if not should_reply(
+                new_message["sender"],
+                new_message["text"],
+                "Lucky"
+            ):
+                print("Bot: Message ignored.")
+                continue
 
-        input("Press ENTER to close WhatsApp...") 
+            # Generate AI response
+            response = get_ai_response(
+                new_message["text"]
+            )
+
+            print("Bot:", response)
+
+            # Send response
+            whatsapp.send_message(response)
+
+            print("Message sent successfully.")
 
     finally:
 

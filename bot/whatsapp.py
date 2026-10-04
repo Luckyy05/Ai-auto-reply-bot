@@ -1,4 +1,5 @@
 import re
+import time 
 from playwright.sync_api import sync_playwright
 
 
@@ -121,6 +122,14 @@ class WhatsApp:
         message_box.fill(message)
 
         self.page.keyboard.press("Enter")
+
+    def wait_for_new_message(self, old_message):
+        while True:
+            latest = self.get_latest_message()
+
+            if latest and latest["metadata"] != old_message["metadata"]:
+                return latest
+            time.sleep(3)
 
     def close(self):
 
