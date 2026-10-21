@@ -1,7 +1,8 @@
 import re
 import time 
 from playwright.sync_api import sync_playwright
-
+from pathlib import Path
+from playwright.sync_api import sync_playwright
 
 class WhatsApp:
 
@@ -11,27 +12,57 @@ class WhatsApp:
         self.page = None
 
     def start(self):
+        # self.playwright = sync_playwright().start()
+
+        # self.browser = self.playwright.chromium.launch_persistent_context(
+        #     user_data_dir="./whatsapp_profile",
+        #     headless=False
+        # )
+
+        # self.page = (
+        #     self.browser.pages[0]
+        #     if self.browser.pages
+        #     else self.browser.new_page()
+        # )
+
+        # self.page.goto("https://web.whatsapp.com")
+
+        # print("Waiting for WhatsApp Web...")
+
+        # self.page.wait_for_selector(
+        #     "#pane-side",
+        #     timeout=60000
+        # )
+
+        # print("WhatsApp Web loaded.")
         self.playwright = sync_playwright().start()
 
-        self.browser = self.playwright.chromium.launch_persistent_context(
-            user_data_dir="./whatsapp_profile",
-            headless=False
+    # Resolve the profile relative to the project root
+        profile_path = (
+                Path(__file__).resolve().parent.parent / "whatsapp_profile"
         )
+        profile_path.mkdir(parents=True, exist_ok=True)
+
+        print(f"Using WhatsApp profile: {profile_path}")
+
+        self.browser = self.playwright.chromium.launch_persistent_context(
+                user_data_dir=str(
+                Path(__file__).resolve().parent.parent / "whatsapp_test_profile"
+),
+                headless=False
+            )
 
         self.page = (
-            self.browser.pages[0]
-            if self.browser.pages
-            else self.browser.new_page()
+                self.browser.pages[0]
+                if self.browser.pages
+                else self.browser.new_page()
         )
 
         self.page.goto("https://web.whatsapp.com")
 
         print("Waiting for WhatsApp Web...")
 
-        self.page.wait_for_selector(
-            "#pane-side",
-            timeout=60000
-        )
+        self.page.wait_for_selector("#pane-side", timeout=60000)  
 
         print("WhatsApp Web loaded.")
 
@@ -42,6 +73,8 @@ class WhatsApp:
         )
 
         results = []
+        # take a snapshot of the currnet number pf messages
+        message_count =  messages.count()
 
         for i in range(messages.count()):
 
@@ -49,15 +82,17 @@ class WhatsApp:
 
             try:
                 metadata = message.get_attribute(
-                    "data-pre-plain-text"
-                )
+                    "data-pre-plain-text",
+                    timeout=2000                )
 
                 text_locator = message.locator(
                     '[data-testid="selectable-text"]'
                 )
 
                 if text_locator.count() > 0:
-                    text = text_locator.first.inner_text().strip()
+                    text = text_locator.first.inner_text(
+                        timeout=2000
+                    ).strip()
                 else:
                     text = ""
 
@@ -70,7 +105,7 @@ class WhatsApp:
 
             except Exception as e:
                 print(
-                    f"Could not read message {i}: {e}"
+                    f"Skipping  message {i}: {type(e).__name__}"
                 )
 
         return results
